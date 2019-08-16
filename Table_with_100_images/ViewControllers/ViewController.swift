@@ -16,11 +16,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTable()
+    }
+
+    func setupTable() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
     }
-
 
 }
 
@@ -36,10 +39,11 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
-    
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        //MARK: - Dысоту ячейки решил взять с небольшим запасом
+        return 160
     }
 }
 
